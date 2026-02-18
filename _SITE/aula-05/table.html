@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhando com tabelas</title>
+    <style>
+        table {-webkit-box-shadow: 12px 14px 6px 5px rgba(0,0,0,0.24); box-shadow: 12px 14px 6px 5px rgba(0,0,0,0.24); border: solid 1px gray}
+        table thead th {background: #000; color: #FFF;}
+        table tfoot td {background: lightgray;}
+        table tbody tr:nth-child(even) td {background: #f2f2f2;}
+        table tbody tr:hover {background: #E9E9E9; cursor: pointer;}
+    </style>
+</head>
+<body>
+    <h1>Trabalhando com tabelas</h1>
+    <table align="center" cellspacing="0" cellpadding="5" summary="Tabela de informações pessoais" width="250">
+        <caption>Informações pessoais</caption>
+        <thead>
+            <tr>
+                <th title="Nome completo">Nome</th>
+                <th title="Idade">Idade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id="1">
+                <td>Carlos</td>
+                <td>38</td>
+            </tr>
+            <tr id="2">
+                <td>Maria</td>
+                <td>33</td>
+            </tr>
+            <tr id="3">
+                <td>João</td>
+                <td>20</td>
+            </tr>
+            <tr id="4">
+                <td>Manuel</td>
+                <td>30</td>
+            </tr>
+            <tr id="5">
+                <td>Michelle</td>
+                <td>26</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">Total de pessoas: 5</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
