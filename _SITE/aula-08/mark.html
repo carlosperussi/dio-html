@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark</title>
+</head>
+<body>
+    <input id="busca" type="search"><br>
+    <p id="descricao">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at ante quam. Nam libero erat, accumsan vitae augue ut, venenatis tempor nulla. Sed sed porttitor enim. Donec blandit, justo quis faucibus pellentesque, leo ex pretium est, vel facilisis urna mauris aliquet felis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi varius libero nec elit pharetra gravida id ac metus. Vestibulum sollicitudin malesuada urna et sollicitudin. Etiam fermentum turpis sed vestibulum pharetra. Maecenas magna ante, condimentum at tellus ut, fermentum viverra arcu. Maecenas porttitor ante vitae ante rutrum, non lacinia leo ultrices. Ut pellentesque malesuada condimentum. Fusce mollis dui nec sagittis posuere.</p>
+
+    <script>
+        var searchField = document.getElementById("busca");
+        var descriptionObject = document.getElementById("descricao");
+        var textToSearch = descriptionObject.innerHTML;
+
+        function escapeRegExp(value) {
+            return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        }
+
+        function doSearch(busca) {
+            if (!busca) {
+                descriptionObject.innerHTML = textToSearch;
+                return;
+            }
+
+            var regex = new RegExp(`(${escapeRegExp(busca)})`, "gi");
+            descriptionObject.innerHTML = textToSearch.replace(regex, "<mark>$1</mark>");
+        }
+
+        searchField.addEventListener("keyup", (e) => doSearch(e.target.value));
+    </script>
+    
+</body>
+</html>
